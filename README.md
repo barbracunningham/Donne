@@ -6,7 +6,7 @@ Still in development.
 
 
 
-Simple interface bridging HTTP and TCP, using heap memory allocation where required.
+Simple interface bridging HTTP and TCP, using heap memory allocation and parallel threading where appropriate. 
 
 
 
