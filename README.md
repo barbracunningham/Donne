@@ -5,38 +5,38 @@ Lean, fast optimisation library for image downloading and processing written in 
 -- Example Uses --
 
 
-*Connect to MySQL database:
+*Connect to MySQL database:*
 
 `Donne donne_object("101.22.121.334", "my_image_db", "me", "mypass"); //IP, database, user, password`
 
 
 
-*Set parallel thread number
+*Set parallel thread number:*
 
 `donne.override_corethreads(2); //Thread number`
 
 
 
-*Override parallel thread threhold
+*Override parallel thread threhold:*
 
 `donne.override_threshold(400); //Parallel versus serialisation threshold`
 
 
 
-*Pull image URL's:
+*Pull image URL's:*
 
 `donne.select_query(0, 244); //Row start, row end`
 
 
 
-*Download each image:
+*Download each image:*
 
 `donne.download();`
 
 
 
 
-*Resize images
+*Resize images:*
 
 `donne.dimensions(3, 3, 0.77, 0.77); //Width, height, scale`
 
