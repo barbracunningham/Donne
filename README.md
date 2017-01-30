@@ -1,10 +1,11 @@
 # Donne
-Lean, fast optimisation library for image downloading and processing written in C/C++. Implementing parallel processing, Donne provides a high level abstraction interface across `CURL`, `OpenMP`, `mysql-connector` and `OpenCV`.
+Lean, fast optimisation library for image downloading and processing written in C/C++. Implementing parallel processing, `Donne` provides a high level abstraction interface across `CURL`, `OpenMP`, `mysql-connector` and `OpenCV`.
 
 
 Examples:
 
-MySQL connection
+MySQL connection - Connect `Donne` to MySQL database
+`Donne donne_object("101.22.121.334", "mydb", "me", "mypass"); //IP, database, user, password`
 
 
 Query MySQL
