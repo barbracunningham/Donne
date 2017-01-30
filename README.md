@@ -7,8 +7,7 @@
 
 
 * *Connect to MySQL database:*
-
-* `Donne donne_object("101.22.121.334", "my_image_db", "me", "mypass"); //IP, database, user, password`
+  `Donne donne_object("101.22.121.334", "my_image_db", "me", "mypass"); //IP, database, user, password`
 
 
 
