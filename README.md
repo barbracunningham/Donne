@@ -4,7 +4,8 @@ Lean, fast optimisation library for image downloading and processing written in 
 
 Examples:
 
-MySQL connection - Connect `Donne` to MySQL database
+MySQL connection - Connect to MySQL database:
+
 `Donne donne_object("101.22.121.334", "mydb", "me", "mypass"); //IP, database, user, password`
 
 
