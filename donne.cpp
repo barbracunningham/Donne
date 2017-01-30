@@ -42,14 +42,10 @@ using namespace std::chrono;
 using namespace std;
 using namespace cv;
 
-
-        
-//Download class
 Donne::Download::Download(){};
 Donne::Download::~Download()
 {
 }
-
 
 auto Donne::Download::cv_write(char *ptr__, size_t size, size_t nmemb, void *userdata__) -> size_t
 {
@@ -59,8 +55,7 @@ auto Donne::Download::cv_write(char *ptr__, size_t size, size_t nmemb, void *use
     return count;
 }
 
-
-cv::Mat Donne::Download::cv_download(const char *imurl__)
+auto Donne::Download::cv_download(const char *imurl__) -> cv::Mat
 {
     std::vector<uchar> stream;
     curlhandle__ = curl_easy_init();
@@ -73,8 +68,6 @@ cv::Mat Donne::Download::cv_download(const char *imurl__)
     if(stream.size() < 1){cv::Mat failed; return failed;}
     return cv::imdecode(stream, -1);
 }
-
-
 
 auto Donne::Download::cv_conduit(std::string &url) -> int
 {
@@ -94,7 +87,6 @@ auto Donne::Download::cv_conduit(std::string &url) -> int
     return 1;
 }
 
-
 auto Donne::Download::format_url(std::vector<std::string> &X) -> void
 {
     std::transform(X.begin(), X.end(), std::back_inserter(urls), [](std::string &url){return url;});
@@ -111,12 +103,7 @@ auto Donne::Download::exe_download() -> void
     }
 }
 
-
-
-Donne::SQLDatabase::SQLDatabase()
-{
-}
-
+Donne::SQLDatabase::SQLDatabase(){};
 
 Donne::SQLDatabase::SQLDatabase(const std::string &sql_ip, const std::string &sql_db, const std::string &sql_user, const std::string &sql_pass)
 {
@@ -161,10 +148,7 @@ auto Donne::SQLDatabase::select(const std::string &sql_table, const std::string 
         }
     }
 }
-        
-        
-        
-        
+            
 Donne::Donne(){};
         
 Donne::Donne(const std::string &ip, const std::string &db, const std::string &user, const std::string &pass)
@@ -205,4 +189,3 @@ auto Donne::override_corethread(int t) -> void
 {
     omp_set_num_threads(t);
 }
-        
