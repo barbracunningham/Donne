@@ -5,7 +5,10 @@
 
 Simple interface bridging HTTP and TCP, using heap memory allocation where required.
 
--- Example Uses --
+
+
+
+-- Example Operations --
 
 
 * *Connect to MySQL database:*
