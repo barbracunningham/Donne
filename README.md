@@ -28,7 +28,7 @@ Simple interface bridging HTTP and TCP, using heap memory allocation and paralle
 
 
 
-* *Set parallel thread number:*
+* *Set parallel thread number (default is machine determined):*
 
   `donne.override_corethreads(2); //Thread number`
 
