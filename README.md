@@ -2,19 +2,21 @@
 
 **Lean, fast optimisation and abstraction library for image downloading and processing written in C/C++. Implementing parallel processing, `Donne` provides a high level abstraction interface across `CURL`, `OpenMP`, `mysql-connector` and `OpenCV`.**
 
+**Simple interface bridging HTTP and TCP, using heap memory allocation and parallel threading where appropriate.**
+
+
 Still in development - This is an open-source project for anybody to contribute to! 
-     
+
+Next deverlopment steps: 
+
      * Greater range of geometric manipulation functions.
      * Super resolution algorithm support, including single image resolution enhancement.
      * SQL INSERT, UPDATE and JOIN operations.
      * User defined SQL table and column parameters (current default table = 'image_description', column = 'url').
      * Greater OpenMP control, including thread load balance monitoring.
+     * Apache Thrift support.
 
 
-
-
-
-Simple interface bridging HTTP and TCP, using heap memory allocation and parallel threading where appropriate. 
 
 
 
