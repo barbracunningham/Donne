@@ -3,31 +3,19 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <unordered_map>
-#include <map>
 #include <memory>
 #include <thread>
-#include <mutex>
-#include <future>
-#include <list>
 #include <map>
-#include<array>
-#include<tuple>
-#include<cassert>
+#include <cassert>
 #include <cstring>
-#include<queue>
-#include<bitset>
-
+#include <bitset>
 #include <algorithm>
-#include <unordered_set>
 #include <numeric>
 #include <functional>
-#include <chrono>
-#include <curl/curl.h>
 
+#include <curl/curl.h>
 #include <opencv2/opencv.hpp>
 #include <omp.h>
-
 #include <mysql_connection.h>
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
