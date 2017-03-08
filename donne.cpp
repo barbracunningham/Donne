@@ -82,10 +82,7 @@ auto Donne::Download::exe_download() -> void
 {
     assert(!urls.empty()); 
     #pragma omp parallel for if(urls.size() >= threshold)
-    for(int i = 0; i < urls.size(); i++)
-    {
-        this -> cv_conduit(urls[i]);
-    }
+    for(int i = 0; i < urls.size(); i++){this -> cv_conduit(urls[i]);}
 }
 
 Donne::SQLDatabase::SQLDatabase(){};
