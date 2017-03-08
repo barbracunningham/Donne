@@ -42,15 +42,14 @@ using namespace std::chrono;
 using namespace std;
 using namespace cv;
 
-Donne::Download::Download(){};
-Donne::Download::~Download()
-{
-}
+Donne::Download::Download(){}
+
+Donne::Download::~Download(){}
 
 auto Donne::Download::cv_write(char *ptr__, size_t size, size_t nmemb, void *userdata__) -> size_t
 {
     std::vector<uchar> *stream__ = (vector<uchar>*)userdata__;
-    size_t count = size * nmemb;
+    size_t count {size * nmemb};
     stream__ -> insert(stream__ -> end(), ptr__, ptr__ + count);
     return count;
 }
@@ -75,7 +74,6 @@ auto Donne::Download::cv_conduit(std::string &url) -> int
     const std::string count_s {std::to_string(count)};
     cv::Mat image;
     image = cv_download(&url[0]);
-    
     if(image.empty()){return 0;};
     if((d_1 > 0 || d_2 > 0) || (s_1 > 0 || s_2 > 0))
     {
@@ -94,8 +92,7 @@ auto Donne::Download::format_url(std::vector<std::string> &X) -> void
             
 auto Donne::Download::exe_download() -> void
 {
-    assert(!urls.empty()); //Ensure data is not empty
-    
+    assert(!urls.empty()); 
     #pragma omp parallel for if(urls.size() >= threshold)
     for(int i = 0; i < urls.size(); i++)
     {
@@ -111,10 +108,11 @@ Donne::SQLDatabase::SQLDatabase(const std::string &sql_ip, const std::string &sq
         dri__ = get_driver_instance();
         con__ = dri__ -> connect(sql_ip, sql_user, sql_pass);
         con__ -> setSchema(sql_db);
-    } catch(sql::SQLException &e){
-            std::cout<<e.what()<<std::endl;
-            std::cout<<e.getErrorCode()<<std::endl;
-            std::cout<<e.getSQLState()<<std::endl;
+    } catch(sql::SQLException &e)
+    {
+        std::cout<<e.what()<<std::endl;
+        std::cout<<e.getErrorCode()<<std::endl;
+        std::cout<<e.getSQLState()<<std::endl;
     }
 }
 
@@ -175,7 +173,7 @@ auto Donne::dimensions(int d1, int d2, int s1, int s2) -> int
 
 auto Donne::download() -> int
 {
-    assert(sqld__ -> url_store.empty() != true);
+    assert(!sqld__ -> url_store.empty());
     dwnl__ -> format_url(sqld__ -> url_store);
     dwnl__ -> exe_download();
 }
